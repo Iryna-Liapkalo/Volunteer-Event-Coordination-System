@@ -49,7 +49,7 @@ Example | What is wrong?  Corrective Action
 
 Database drawn as an actor. A database is an internal technical component, not an external user or external system. Remove Database; actors must be external entities e.g., Volunteer, External Verification API
 Booking Screen drawn as a use case. A screen is a User Interface element, not a functional goal or behavior. Rename to a verb-goal phrase like Apply for Restricted Event Role
-Volunteer placed inside boundary. An actor represents an external entity interacting with the system, so it must stay outside the boundary box.  Move the `Volunteer` actor outside the system boundary
+Volunteer placed inside boundary. An actor represents an external entity interacting with the system, so it must stay outside the boundary box.  Move the Volunteer actor outside the system boundary
 Do Stuff used as a use case name. Too vague; does not describe a clear, meaningful user goal Use specific action verbs, e.g., Export Volunteer Roster
 Every stakeholder added as an actor. Not all stakeholders directly interact with the software e.g., Community Sponsor or Privacy Office. Include only stakeholders who directly trigger or interact with use cases. 
 
@@ -62,5 +62,5 @@ Every stakeholder added as an actor. Not all stakeholders directly interact with
 
 
 ## 7. Reflection
-What the diagram helped understand: It clearly defined the system boundary for the Community Volunteer & Event Coordination System* and separated standard volunteer goals from administrative organizer functions
-Uncertainty revealed: The diagram highlighted an ambiguity regarding verification — specifically whether credential checks are performed real-time by an external API or asynchronously by an admin
+What the diagram helped understand: It clearly defined the system boundary for the Comunity volunteer and event system and separated standard volunteer goals from administrative functions
+Uncertainty revealed: It highlighted an ambiguity regarding verification — specifically whether credential checks are processed real time via an external API or asynchronously by an admin
