@@ -62,5 +62,5 @@ Every stakeholder added as an actor. Not all stakeholders directly interact with
 
 
 ## 7. Reflection
-What the diagram helped understand: It clearly defined the system boundary for the Comunity volunteer and event system and separated standard volunteer goals from administrative functions
+What the diagram helped understand: It clearly defined the system boundary for the Comunity volunteer and event system and separated standard volunteer goals from administrative functions.
 Uncertainty revealed: It highlighted an ambiguity regarding verification — specifically whether credential checks are processed real time via an external API or asynchronously by an admin
