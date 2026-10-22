@@ -1,1 +1,97 @@
+# Week 6 — Conceptual Domain Modelling (UML Class Diagrams)
 
+
+## Part A — Review of Earlier Work
+
+### Task A1: Requirement Evidence Identification
+1. Which requirement tells us that Booking is an important concept
+   A student can make more than one equipment booking.
+2. Which requirement identifies two attributes of Booking
+   Each booking records a start date and end date
+3. Which requirements indicate relationships involving Staff Member
+   Staff members review booking requests
+   Staff members manage equipment availability
+
+
+## Part B — Identify Domain Concepts
+
+### Task B1: Candidate Concept Table
+
+| Candidate | Class, Attribute, or Action? | Supporting Requirement |
+| --- | --- | --- |
+| Student | Class | FR01 |
+| Booking | Class | FR01, FR02, FR03 |
+| Start date | Attribute | FR03 |
+| End date | Attribute | FR03 |
+| Equipment | Class | FR01, FR02, FR05 |
+| Review | Action | FR04 |
+| Staff Member | Class | FR04, FR05 |
+
+
+### Task B2: Core Domain Classes Justification
+1. Student: Represents the primary user who requests and holds equipment reservations within the system
+2. Booking: Represents the central transactional domain record containing reservation dates, status, and item associations
+3. Equipment: Represents the tangible resource being reserved and managed for availability
+4. Staff Member: Represents the administrative role responsible for reviewing requests and overseeing equipment availability
+
+
+### Task B3: Identification of Uncertainty
+Candidate Attribute: emailAddress for Student or status for Booking
+Uncertainty: While recording an email or booking status is logically useful, FR01–FR06 do not explicitly state how notifications or approval states are stored.
+Target Stakeholder: College Facilities Manager / System Administrator
+
+
+## Part E — Multiplicity & Open Questions
+
+### Task E2 & E3: Multiplicity Analysis & Open Questions
+
+#### OPEN QUESTIONS Note
+1. Student — Booking: Can a booking be made jointly on behalf of multiple students, or is it strictly tied to exactly one student
+2. Booking — Equipment: How many historical or future bookings can reference the same equipment item over time (`0..*`)
+3. Staff Member — Booking: Is each booking reviewed by exactly one assigned staff member, or can multiple staff members review the same request
+4. Staff Member — Equipment: Can multiple staff members manage the same equipment item, or is equipment divided among specific staff
+
+
+## Part F — Model Verification
+
+### Task F1: Requirements-to-Model Check Table
+
+| Requirement | Where represented in diagram? | Fully represented? |
+
+| FR01 | Student — Booking association | Partially (Student side multiplicity requires confirmation) |
+| FR02 | Booking — Equipment association with 1 at Equipment end | Yes |
+| FR03 | startDate and endDate attributes in Booking class | Yes |
+| FR04 | Staff Member — Booking association (reviews) | Partially (Reviewer assignment rule unconfirmed) |
+| FR05 | Staff Member — Equipment association (manages availability of) | Yes |
+| FR06 | Candidate status attribute in Booking class | Needs clarification (Approval workflow logic not detailed)
+
+
+## Part G — Campus Workshop Registration (New Example)
+
+### Task G5: Interpretation Statements
+1. One Student can have 0..(zero or many) Registration records
+2. Each Registration belongs to 1 (exactly one) Student
+3. One Workshop can have 0..(zero or many) Registration records
+4. Each Registration is for 1 (exactly one) Workshop
+
+
+## Part H — Assessed Individual Project Application
+Scenario A: Community Volunteer & Event Coordination System
+
+### Task H1: Candidate Domain Concepts
+1. Volunteer: The community member applying for event roles
+2. Event: The activity organized for community coordination
+3. EventRole: Specific positions/tasks within an event e.g., restricted roles requiring Garda vetting
+4. Application: The formal submission made by a volunteer to join a specific role
+
+### Task H2 & H3: Class Associations & Multiplicities
+Volunteer (1) — makes — (0..*) Application
+  One Volunteer can submit zero or many Applications; each Application belongs to exactly one Volunteer
+Applicatio (0..*) — for — (1) EventRole
+  Each Application is submitted for exactly one EventRole; an EventRole can receive zero or many Applications
+EventRole (1..*) — belongs to — (1) Event
+  Each Event has one or many EventRoles; an EventRole belongs to exactly one Event
+
+### Task H4: Open Question / Assumption
+Question: Can a volunteer submit multiple applications for different roles within the same event, or are they restricted to one application per event?
+Target Stakeholder: Volunteer Event Coordinator / Compliance Officer
