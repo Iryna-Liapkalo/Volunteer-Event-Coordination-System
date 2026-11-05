@@ -2,9 +2,10 @@
 
 
 ## 1. Requirement Used
-FR-01 (Account & Profile): The system shall allow volunteers to register an account and select their skills, general availability, and upload qualification documents
-FR-03 (Automated Verification Check): The system shall automatically prevent unverified volunteers from registering for restricted roles requiring background checks e.g., Garda vetting
-FR-05 (Roster Management): The system shall allow event organisers to view, confirm, and export volunteer attendance rosters for their assigned events
+## 1. Requirement Used
+FR01 (Account & Profile): The system shall allow volunteers to register an account, specify skills/availability, and upload qualification documents.
+FR06 (Automated Verification Check): The system shall automatically prevent unverified volunteers from registering for restricted roles requiring background checks (e.g., Garda Vetting).
+FR11 (Roster Management): The system shall allow event organisers to view, confirm, and export volunteer attendance rosters for their assigned events.
 
 
 
