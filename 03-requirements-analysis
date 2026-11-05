@@ -22,26 +22,23 @@ Requirements are categorized using the MoSCoW prioritization framework to define
 
 
 ### 2.1 Must Have (Critical for MVP)
-REQ-MUST-01 (FR): The system shall allow volunteers to register an account and manage profile skills, availability, and qualification documents
-REQ-MUST-02 (FR): The system shall allow event organisers to create community events, define role capacities, and set qualification pre-requisites
-REQ-MUST-03 (FR): The system shall enforce role-based access control, preventing unverified volunteers from booking restricted event roles
-REQ-MUST-04 (NFR): Personal volunteer contact information (phone number, email) shall only be visible to the event organiser managing that specific event GDPR Compliance
-
+FR01 (FR): The system shall allow volunteers to register an account and manage profile skills, availability, and qualification documents.
+FR03 (FR): The system shall allow event organisers to create community events, define role capacities, and set qualification pre-requisites.
+FR06 (FR): The system shall enforce role-based access control, preventing unverified volunteers from booking restricted event roles.
+NFR01 (NFR): Personal volunteer contact information phone number, email shall only be visible to the event organiser managing that specific event GDPR Compliance.
 
 ### 2.2 Should Have (High Priority)
-REQ-SHOULD-01 (FR): The system shall automatically send email notifications to registered volunteers within 2 minutes of an event cancellation or schedule change
-REQ-SHOULD-02 (FR): The system shall allow event organisers to export volunteer attendance rosters in CSV format
-REQ-SHOULD-03 (NFR): Search results for available events shall load in under 2 seconds during peak usage
-
+FR09 (FR): The system shall automatically send email notifications to registered volunteers within 2 minutes of an event cancellation or schedule change.
+FR11 (FR):The system shall allow event organisers to export volunteer attendance rosters in CSV format.
+NFR04 (NFR): Search results for available events shall load in under 2 seconds during peak usage.
 
 ### 2.3 Could Have (Desirable if Resources Permit)
-REQ-COULD-01 (FR): The system shall maintain an automated waitlist for full events and notify waitlisted volunteers if a slot opens up
-REQ-COULD-02 (FR): The system shall display a calendar view showing upcoming volunteer commitments on the user dashboard
-
+FR-C01 (FR): The system shall maintain an automated waitlist for full events and notify waitlisted volunteers if a slot opens up.
+FR-C02 (FR): The system shall display a calendar view showing upcoming volunteer commitments on the user dashboard.
 
 ### 2.4 Won't Have (Out of Scope for Initial Release)
-REQ-WONT-01: Native mobile applications iOS/Android — web-first responsive design will be used instead
-REQ-WONT-02: In-app direct messaging between volunteers
+WONT-01: Native mobile applications iOS/Android — a web-first responsive design will be used instead.
+WONT-02: In-app direct peer-to-peer messaging between volunteers.
 
 
 
