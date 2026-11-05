@@ -1,7 +1,7 @@
 # Week 5 — Activity Diagram
 
 ## 1. Process Modelled
-Apply for Restricted Event Role (Community Volunteer & Event Coordination System)
+Apply for Restricted Event Role (FR06 — Community Volunteer & Event Coordination System)
 
 ## 2. Purpose
 To model the step-by-step workflow and operational control flow for the Apply for Restricted Event Role use case. The activity diagram helps clarify process sequences, identify decision logic, expose missing business rules, and communicate requirements clearly with stakeholders.
