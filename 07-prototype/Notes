@@ -1,0 +1,48 @@
+# Week 7 — Low-Fidelity Prototyping & Requirements Validation
+
+## 1. Prototyping Objectives & User Journey
+Selected User Journey: A volunteer browsing community events, selecting a restricted event role, entering required details, and submitting an application for staff/coordinator review
+Purpose of Prototype: To visualize the interaction flow, test assumptions around Garda Vetting status checks, and ensure the interface does *not* misleadingly imply instant approval upon submission
+Fidelity Level: Low-fidelity wireframes created using basic blocks and clear text labels to focus strictly on layout, requirements traceability, and workflow logic rather than polished visual design
+
+
+## 2. Connected Screen Sequence (4–6 Screens)
+
+### Screen 1 — Browse Events & Roles (FR01 / FR03)
+Purpose: Allows volunteers to view open community events and see role pre-requisites e.g., distinguishing general roles from restricted roles requiring Garda Vetting
+Key Elements: Event list, search filters, role type badges, and a View Role Details action button
+Requirement Link: Supported by candidate requirements for event discovery and role definition
+
+### Screen 2 — Role Details & Verification Check (FR06)
+Purpose: Displays specific requirements for a chosen role and checks if the volunteer's profile satisfies the pre-requisites.
+Key Elements: Role description, required qualifications e.g., Garda Vetting status indicator, and a Proceed to Applicatio button
+Requirement Link: FR06 Automated Verification Check / Restricted Roles
+
+### Screen 3 — Application Form (FR02 / FR05)
+Purpose: Captures the volunteer's availability and confirmation details.
+Key Elements: Date/time preference inputs, terms consent checkbox,Back button, and a distinct Submit Application for Review button.
+Requirement Link: Ensures action wording clearly indicates submission, not immediate confirmation
+
+### Screen 4 — Missing Information / Error State (Candidate Validation)
+Purpose: Explores how the system handles incomplete submissions e.g., missing mandatory availability fields or unverified vetting status
+Key Elements: Inline warning message Please complete required availability fields / Vetting verification pending, guiding the user to correct the error before resubmitting
+Status: Candidate validation rule — pending stakeholder confirmation
+
+### Screen 5 — Submission Acknowledgment (FR09 / Staff Review)
+Purpose: Provides honest, unambiguous feedback after application submission.
+Key Elements: Heading Application Submitted, explicit status message: Status: Pending Coordinator Review. Your application is not yet approved, and a Return to Dashboard button.
+Requirement Link: Aligns directly with staff review workflows and prevents false assumptions of instant approval
+
+
+## 3. Walkthrough & Validation Findings Log
+
+A simulated peer walkthrough was conducted following the task: You want to apply for a community youth support role. Show how you would submit your application and what you expect to happen next.
+| Item / Finding | Evidence Type | Observed Behavior / Issue | Action or Next Step |
+|V01| Simulated Peer Walkthrough | Reviewer initially looked for anInstant Confirm button on Screen 3, assuming registration was automatic | Clarified button copy to Submit for Review and added explicit disclaimer text on Screen 3. |
+|V02| Self-Review / UI Check | Unclear whether unvetted users can view the application form before uploading certificates | Record open question for Privacy Officer / Event Coordinator: Should restricted roles be hidden or shown with an upload prompt? |
+|V03| Walkthrough Probe | Reviewer asked how they would know when the coordinator makes a final decision | Documented candidate requirement for automated email/dashboard notifications once staff review is completed |
+
+
+## 4. Open Questions & Unresolved Rules
+1. Notification Mechanism:How will volunteers be informed of approval or rejection outcomes? Candidate requirement: email or dashboard alert
+2. Vetting Expiry Handling: What precise workflow should trigger if a volunteer's Garda Vetting status expires while they have active upcoming event registrations
