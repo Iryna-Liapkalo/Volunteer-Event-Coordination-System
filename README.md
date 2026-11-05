@@ -8,7 +8,7 @@ Name: Iryna Liapkalo
 Requirements Engineering
 
 ## Project Status
-Week 7
+Week 8
 
 ## Repository Purpose
 
