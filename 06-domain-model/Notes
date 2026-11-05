@@ -4,13 +4,12 @@
 ## Part A — Review of Earlier Work
 
 ### Task A1: Requirement Evidence Identification
-1. Which requirement tells us that Booking is an important concept
-   A student can make more than one equipment booking.
-2. Which requirement identifies two attributes of Booking
-   Each booking records a start date and end date
-3. Which requirements indicate relationships involving Staff Member
-   Staff members review booking requests
-   Staff members manage equipment availability
+1. Which requirement tells us that Application is an important concept
+   A volunteer can submit an application for an event role
+2. Which requirement identifies attributes of Event or Application
+   Each event records a date, location, and required capacity
+3. Which requirements indicate relationships involving Event Organiser
+   Event organisers create community events and manage volunteer attendance rosters
 
 
 ## Part B — Identify Domain Concepts
