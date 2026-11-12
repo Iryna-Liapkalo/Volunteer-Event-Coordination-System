@@ -20,48 +20,63 @@ What issues do you encounter when an event schedule changes or is cancelled
 Closed / Fact-Checking Questions:
 Do you currently receive event reminders via email or messaging apps?
 
+###1.3 Interview Plan: Privacy / Security Officer
+Goal: Understand privacy requirements and access restrictions for volunteer information.
+Open Questions:
+What personal information can event organisers access about volunteers?
+Under what circumstances can volunteer information be shared with team leaders?
+Who is responsible for approving access to information about volunteers working with vulnerable groups?
+
+###1.4 Interview Plan: IT Support / System Administrator
+Goal: Understand technical and operational constraints.
+Open Questions:
+Are there existing systems that the new system should integrate with?
+What technical or maintenance problems should the system avoid?
+Who should be responsible for managing user accounts and access permissions?
+
 
 ## 2. Stakeholder Conflicts & Resolution Analysis
-
 Conflict Scenario: Volunteer Registration Flexibility vs. Event Organiser Preparation Time & Compliance
-Volunteer Perspective: Wants last-minute sign-ups and instant registration without waiting for profile approvals
-Event Organiser / Tech Specialist Perspective: Needs volunteer rosters finalized 48 hours in advance to prepare equipment and verify qualifications e.g., Garda vetting
-Privacy/Security Officer Perspective: Requires strict admin sign-off before unvetted users can access event details involving vulnerable groups
+Volunteer Perspective: Volunteers may want to sign up at short notice without waiting for profile approval.
+Event Organiser Perspective: Organisers may need sufficient time to finalise rosters, prepare equipment and check qualifications.
+Privacy/Security Officer Perspective: Access to information about volunteers working with vulnerable groups may require specific approval and access restrictions.
 Resolution Strategy:
-Define two distinct role tiers: General Roles (allow sign-up up to 12 hours before) and Restricted Roles require verified qualifications and close 48 hours prior to the event
+Different registration deadlines may be needed for general and restricted roles. However, the exact deadlines and qualification verification rules must be confirmed with event organisers and the Privacy/Security Officer before they become agreed requirements.
+Open Questions:
+What is the latest acceptable registration time for each role type?
+Who is responsible for verifying volunteer qualifications?
+When must event organisers finalise volunteer rosters?
 
 
 
 ## 3. Candidate Requirements Catalogue
 
-### 3.1 Functional Requirements 
-Account & Profile: The system shall allow volunteers to register an account and select their skills, general availability, and upload qualification documents
-Event Creation: The system shall allow event organisers to create events, specify required volunteer capacities, and set qualification pre-requisites for each role
-Automated Verification Check: The system shall automatically prevent unverified volunteers from registering for restricted roles requiring background checks e.g., Garda vetting
-Automated Notifications: The system shall automatically send email notifications to all registered volunteers within 2 minutes of an event cancellation or time change
-Roster Management: The system shall allow organisers to view, confirm, and export volunteer attendance rosters for their assigned events.
+### 3.1 Functional Requirements
+FR01 — Account Registration: The system shall allow volunteers to register an account and provide the required personal information.
+FR02 — Volunteer Profile: The system shall allow registered volunteers to record their skills and general availability.
+FR03 — Qualification Documents: The system shall allow volunteers to upload documents providing evidence of their qualifications.
+FR04 — Event Creation: The system shall allow authorised event organisers to create events, specify required volunteer capacities, and set qualification prerequisites for each role.
+FR05 — Qualification Verification: The system shall restrict access to designated restricted roles to volunteers whose required qualifications are recorded as verified.
+FR06 — Automated Notifications: The system shall notify volunteers registered for an affected event when that event is cancelled or its details are changed.
+FR07 — Roster Management: The system shall allow authorised organisers to view, confirm, and export volunteer attendance rosters for their assigned events.
 
-### 3.2 Non-Functional Requirements 
-Usability: At least 90% of first-time volunteer users shall be able to search and register for an event within 3 minutes without assistance
-Performance/Response Time: Event availability searches shall return updated results in under 2 seconds during normal peak load
-Security & Privacy / GDPR: Volunteer personal contact details (phone number, email) shall only be visible to the event organiser managing that specific event.
-Availability: The system shall be available for volunteer registration 99.5% of the time during standard operational hours
+### 3.2 Non-Functional Requirements
+NFR01 — Usability: At least 90% of first-time volunteer users shall be able to search for and register for an event within 3 minutes without assistance. This proposed target can be evaluated through usability testing with representative volunteers.
+NFR02 — Performance: Event availability searches shall return results within 2 seconds under normal peak usage conditions. This proposed target can be tested by measuring search response times under an agreed number of concurrent users.
+NFR03 — Security & Privacy: Volunteer personal contact details, such as phone numbers and email addresses, shall only be accessible to authorised users who require this information for their assigned responsibilities. This requirement can be verified through access-control testing using different user accounts.
+NFR04 — Availability: The system shall be available for volunteer registration 99.5% of the time during agreed standard operational hours. This proposed target can be verified by monitoring system availability over an agreed period.
 
 
 
 ## 4. Requirement Surgery 
 
 ### Example 1
-Raw Stakeholder Statement:We need a calendar that everyone can see so people know what's happening
-Analysis: The statement proposes a specific feature (calendar) without defining access rules, privacy restrictions, or update behavior.
-Refined Functional Requirement :The system shall display a public schedule of upcoming open events filtered by date, location, and required skills
-Refined Non-Functional Requirement:Public event schedules shall update in real-time within 5 seconds of an event status change
-
-### Example 2
-Raw Stakeholder Statement:The system should make booking volunteers super fast and easy
-Analysis: Super fast and easy are subjective and un-testable terms
-Refined Functional Requirement:The system shall allow an organiser to assign a qualified volunteer to an open role in no more than 3 clicks from the dashboard
+Raw Stakeholder Statement: We need a calendar that everyone can see so people know what's happening.
+Analysis:The statement suggests a need for volunteers to access information about upcoming events. However the term everyone is ambiguous because different user groups may have different access permissions.
+Refined Functional Requirement: The system shall allow volunteers to view information about upcoming events that require volunteer support
+Open Question: Which event details should be publicly accessible, and which should only be visible to registered volunteers
+Verification: This requirement can be checked through a task-based walkthrough in which a volunteer attempts to find and view information about upcoming events that require volunteer support.
 
 
 ## 5. Reflection 
-Moving from initial discovery to formal elicitation showed that raw stakeholder statements cannot be used directly as system requirements. Turning vague requests like fast booking or "shared calendars" into clear FRs and NFRs prevents scope creep and keeps requirements testable. Solving the conflict between volunteer flexibility and organiser compliance early helped establish role-based registration rules before system modeling starts.
+I learned that proposed solutions and business rules should not be treated as confirmed requirements without stakeholder agreement. Any unclear deadlines, qualification verification procedures and access permissions must be recorded as open questions and clarified through further elicitation.
