@@ -33,5 +33,38 @@ Goal 1 Efficiency: Reduce the manual administrative time spent matching voluntee
 Goal 2 Communication: Eliminate double-bookings and ensure 100% of registered volunteers receive automated notifications within 5 minutes of an event cancellation or schedule update
 Goal 3 Compliance & Quality: Prevent unqualified or unvetted volunteers from being assigned to restricted or specialized event roles
 
+##7. Scope
+In Scope
+-Volunteer registration and profile management.
+-Event and volunteer-role information.
+-Volunteer applications and assignments.
+-Tracking relevant qualifications and verification status.
+-Communication about event changes.
+Out of Scope
+-Processing volunteer payments.
+-Managing event finances and sponsorship payments.
+-Conducting Garda vetting directly.
+-Replacing official external qualification-verification authorities.
+
+
+8. Candidate Requirements
+Functional Requirements
+-FR01: The system shall allow volunteers to register and provide their relevant information.
+-FR02: The system shall allow organisers to create and manage events and volunteer roles.
+-FR03: The system shall allow volunteers to view available event opportunities.
+ FR04: The system shall allow organisers to assign volunteers to event roles.
+Non-Functional Requirement
+
+-NFR01: The system shall restrict access to volunteer personal information to authorised users.
+
+
+
+9. Requirement Surgery
+Vague statement: The system should be easy to use.
+Problem: The term “easy” is subjective and cannot be verified without a defined criterion.
+Clarification question: What tasks should a first-time volunteer be able to complete without assistance?
+Possible improved requirement: The system shall allow a registered volunteer to view available events and submit an application for a selected event.
+Verification: Conduct a task-based walkthrough using a representative volunteer account.
+
 ## 6. Reflection
 Starting with a problem-first approach rather than jumping straight into proposing features (like an "iOS app" or "AI matching algorithm") made it clear that the core issue is process coordination and verified tracking, not just UI design. Categorizing facts separately from assumptions prevented making unverified technical decisions early on. Identifying non-user stakeholders like the Privacy Officer and Sponsors brought crucial GDPR and reporting requirements to light before designing any database schema or interface mockup.
