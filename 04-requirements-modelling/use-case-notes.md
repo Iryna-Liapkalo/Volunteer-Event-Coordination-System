@@ -1,67 +1,43 @@
 # Week 4 — Requirements Modelling: Use Case Diagram
 
+## 1. Requirements Selected
+The use case diagram is based on the Community Volunteer & Event Coordination System
+The main requirements are:
+FR01: Volunteers can create an account.
+FR02: Volunteers can manage their profile, skills and availability
+FR04: Authorised organisers can create and manage events and roles
+FR05: The system restricts applications for designated roles based on verified qualifications.
+FR08 Candidate: Volunteers can submit applications for available event roles. This requirement needs stakeholder confirmation
 
-## 1. Requirement Used
-## 1. Requirement Used
-FR01 (Account & Profile): The system shall allow volunteers to register an account, specify skills/availability, and upload qualification documents.
-FR06 (Automated Verification Check): The system shall automatically prevent unverified volunteers from registering for restricted roles requiring background checks (e.g., Garda Vetting).
-FR11 (Roster Management): The system shall allow event organisers to view, confirm, and export volunteer attendance rosters for their assigned events.
+## 2. Actors
+Actor | Description 
+Volunteer | Registers, manages a profile, browses events and applies for roles. 
+Event Organiser | Creates and manages events and volunteer roles. 
 
+A Privacy / Compliance Officer is a stakeholder but is not currently shown as an actor because direct interaction with the system has not been confirmed.
 
+## 3. Main Use Cases
+Use Case | Actor | Requirement 
+Register Account | Volunteer | FR01 
+Maintain Volunteer Profile | Volunteer | FR02 
+Browse Events and Roles | Volunteer | Candidate 
+Submit Application for Event Role | Volunteer | FR08 
+Create and Manage Events and Roles | Event Organiser | FR04 
 
-## 2. Requirement Analysis (Requirement -> Actor -> Goal -> Use Case)
+## 4. System Boundary
+The system boundary is labelled community Volunteer & Event Coordination System
+Actors are placed outside the boundary, while use cases are placed inside it. Association lines show which actors interact with each use case.
+No include or extend relationships are used because they are not necessary for this initial model.
 
+## 5. Open Questions
 
-### Analysis of FR-01:
-1. Goal: Register as a volunteer, specify skills/availability, and provide credentials for role eligibility
-2. Use Case Name: Register Profile & Qualifications
-3. Actor Check: General Volunteer / Skilled Volunteer
-4. Clarification Question: Can a volunteer browse events before completing their qualification uploads, or is profile completion mandatory at sign-up
+1. Can volunteers browse restricted roles before their qualifications are verified
+2. Is qualification verification performed manually or through an external system
+3. Can volunteers apply for multiple roles within the same event?
+4. Should event creation and role management be separate functions?
 
+These questions require clarification from the Event Organiser and Privacy / Compliance Officer.
 
-### Analysis of FR-03:
-1. Goal: Ensure only vetted volunteers are assigned to sensitive community roles e.g., working with youth or vulnerable adults
-2. Use Case Name: Apply for Restricted Event Role
-3. Actor Check: Skilled Volunteer (Primary) and Garda Vetting / Verification System Secondary/External Actor
-4. Clarification Question: Does the system automatically query an external Garda vetting database, or does an admin manually check uploaded certificates
-
-
-
-## 3. Actors
-General Volunteer (Primary Actor): An external user who creates a profile, browses community events, and registers for basic volunteer tasks
-Skilled Volunteer (Primary Actor): An external user with verified qualifications (e.g., Garda vetting, first aid) who applies for specialized roles
-Event Organiser (Primary Actor): An external user responsible for creating events, managing volunteer rosters, and sending notices
-Garda Vetting System (Secondary / External System Actor): An external system that provides qualification verification status
-
-
-
-## 4. Use Cases (Inside System Boundary)
-Register Profile & Qualifications
-Browse Community Events
-Apply for Restricted Event Role
-Create & Manage Event
-Export Volunteer Roster
-
-
-
-## 5. Answers to Part 7: Modelling Problems Analysis
-
-Example | What is wrong?  Corrective Action 
-
-Database drawn as an actor. A database is an internal technical component, not an external user or external system. Remove Database; actors must be external entities e.g., Volunteer, External Verification API
-Booking Screen drawn as a use case. A screen is a User Interface element, not a functional goal or behavior. Rename to a verb-goal phrase like Apply for Restricted Event Role
-Volunteer placed inside boundary. An actor represents an external entity interacting with the system, so it must stay outside the boundary box.  Move the Volunteer actor outside the system boundary
-Do Stuff used as a use case name. Too vague; does not describe a clear, meaningful user goal Use specific action verbs, e.g., Export Volunteer Roster
-Every stakeholder added as an actor. Not all stakeholders directly interact with the software e.g., Community Sponsor or Privacy Office. Include only stakeholders who directly trigger or interact with use cases. 
-
-
-
-## 6. Unknowns / Questions Raised by the Model
-1. Verification Expiry: What happens when a volunteer’s Garda vetting status expires while they are already registered for an upcoming event
-2. Roster Promotion: When a volunteer cancels their registration, does the system automatically promote the next person on the waitlist, or does the Event Organiser approve it manually
-
-
-
-## 7. Reflection
-What the diagram helped understand: It clearly defined the system boundary for the Comunity volunteer and event system and separated standard volunteer goals from administrative functions.
-Uncertainty revealed: It highlighted an ambiguity regarding verification — specifically whether credential checks are processed real time via an external API or asynchronously by an admin
+## 6. Conclusion
+This week helped me understand how Use Case Diagrams represent interactions between actors and a system. I identified the main actors, their goals and the system boundary.
+I also learned that use cases should describe meaningful user goals rather than individual screens or database operations. The diagram provides a clear overview of the system's functional requirements and highlights areas that need further stakeholder clarification.
