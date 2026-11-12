@@ -1,59 +1,64 @@
 # Week 3 — Requirements Analysis, Specification & Quality
 
+## 1. Requirements Analysis — CARS Matrix
+The purpose of requirements analysis is to turn vague stakeholder statements into clear and testable requirements.
+Original statement | Refined requirement | Type 
 
-## 1. Requirements Quality Control (CARS Criteria Review)
+Volunteers need to register quickly. | FR01: The system shall allow volunteers to create an account. | Functional 
+Volunteers need to provide their information. | FR02: The system shall allow volunteers to maintain their skills and availability information. | Functional 
+Volunteers need to upload documents. | FR03: The system shall allow volunteers to upload qualification evidence. | Functional 
+Check if volunteers are vetted. | FR05: The system shall restrict applications for designated roles to volunteers whose required qualifications are recorded as verified. | Functional 
+The system must be easy to use. | NFR01: First-time volunteers should be able to find events and submit applications without assistance. | Usability 
+The system must be fast. | NFR02: Event searches should meet an agreed response-time target under peak usage. | Performance 
 
-To ensure high quality before modeling, candidate requirements are evaluated against the CARS framework (Clear, Accurate, Realistic, Specific) and checked for testability
+Specific usability and performance targets still need stakeholder agreement.
 
+## 2. MoSCoW Prioritisation
+The following priorities are provisional recommendations and require stakeholder confirmation.
 
-### 1.1 Quality Evaluation Matrix
+Must Have
+FR01 — Volunteer account registration.
+FR02 — Volunteer profile management.
+FR04 — Event and role management.
+FR05 — Qualification verification restrictions.
 
-Req ID. Requirement Statement. Quality Defect Identified. Refined & Testable Requirement 
-The system shall allow volunteers to register quickly and upload documents. Vague quickly. Lacks clear success metrics. FR-01: The system shall allow volunteers to create an account, enter skills and general availability, and upload PDF or JPEG qualification documents up to 5MB in size
-The system shall check if a volunteer is vetted before letting them join. Unclear timing and missing error handling. FR-03: The system shall automatically prevent unverified volunteers from registering for restricted roles requiring background checks (e.g., Garda vetting) and display a warning message indicating missing requirements.
-The application should be super fast and easy to navigate for users. Subjective super fast, easy. Untestable. *NFR-01 (Usability): At least 90% of first-time volunteer users shall complete event registration in 3 clicks or fewer from the main dashboard without administrative assistance
-System responses must be quick during busy hours. Ambiguous quick,"busy hours.  NFR-02 (Performance): Event availability search queries shall display updated results in under 2.0 seconds under a simultaneous load of up to 500 active users
+Should Have
+FR03 — Upload qualification evidence.
+FR06 — Notifications about event changes
+FR07 — Roster management and export
 
+Could Have
+Waitlist functionality
+Calendar view of upcoming events
 
+Won't Have This Time
 
-## 2. Prioritised Requirements Specification (MoSCoW Method)
+No features are assigned to this category because no stakeholder has confirmed any exclusions for the current release.
 
-Requirements are categorized using the MoSCoW prioritization framework to define MVP (Minimum Viable Product) scope and manage development risks.
+## 3. Requirements Traceability
+Traceability connects requirements to their sources, goals and verification methods.
 
+ID | Source | Verification 
+FR01 | Volunteers | Test account registration. 
+FR02 | Volunteers | Check that profile information can be updated
+FR03 | Volunteers / Organisers | Test qualification document upload
+FR04 | Event Organisers | Test event and role creation. 
+FR05 | Organisers / Privacy Officer | Test applications using verified and unverified qualification statuses
+FR06 | Volunteers / Organisers | Test notifications after event changes
+FR07 | Event Organisers | Test roster viewing and export. 
+Example — FR05: This requirement supports the goal of ensuring that volunteers meet the qualification conditions for restricted roles. The exact verification process and rules for pending or expired qualifications require stakeholder confirmation.
 
-### 2.1 Must Have (Critical for MVP)
-FR01 (FR): The system shall allow volunteers to register an account and manage profile skills, availability, and qualification documents.
-FR03 (FR): The system shall allow event organisers to create community events, define role capacities, and set qualification pre-requisites.
-FR06 (FR): The system shall enforce role-based access control, preventing unverified volunteers from booking restricted event roles.
-NFR01 (NFR): Personal volunteer contact information phone number, email shall only be visible to the event organiser managing that specific event GDPR Compliance.
+## 4. Requirement Quality and Open Questions
+Requirements should be clear, specific, feasible, unambiguous, verifiable and traceable.
+The following questions still need clarification:
+1. Who is responsible for verifying volunteer qualifications?
+2. What happens when a qualification is pending or expired?
+3. Can volunteers view restricted roles before verification?
+4. What response time is acceptable for event searches?
+5. How should usability be measured?
+Relevant stakeholders include Event Organisers, Volunteers, the Privacy Officer and IT Support.
 
-### 2.2 Should Have (High Priority)
-FR09 (FR): The system shall automatically send email notifications to registered volunteers within 2 minutes of an event cancellation or schedule change.
-FR11 (FR):The system shall allow event organisers to export volunteer attendance rosters in CSV format.
-NFR04 (NFR): Search results for available events shall load in under 2 seconds during peak usage.
-
-### 2.3 Could Have (Desirable if Resources Permit)
-FR-C01 (FR): The system shall maintain an automated waitlist for full events and notify waitlisted volunteers if a slot opens up.
-FR-C02 (FR): The system shall display a calendar view showing upcoming volunteer commitments on the user dashboard.
-
-### 2.4 Won't Have (Out of Scope for Initial Release)
-WONT-01: Native mobile applications iOS/Android — a web-first responsive design will be used instead.
-WONT-02: In-app direct peer-to-peer messaging between volunteers.
-
-
-
-## 3. Traceability & Acceptance Criteria
-Each requirement must link back to a stakeholder goal and include verifiable acceptance criteria to support testing
-
-
-### Traceability Matrix Example
-Requirement ID: REQ-MUST-03
-Source Stakeholder: Privacy Officer / Event Organiser
-Strategic Goal: Ensure safety, regulatory compliance, and proper Garda vetting for restricted volunteer roles
-Acceptance Criteria (Given-When-Then):
-Given an unverified volunteer is logged into the system
-When they attempt to register for a Restricted Role e.g., Youth Activity Leader
-Then the system shall block the registration, display the message Verified Garda Vetting Required, and provide a link to upload verification documents
-
-## Reflection
-Completing this analysis showed that user requests are often vague. Applying ISO 29148 and the CARS criteria helped turn words like quick or easy into measurable, testable requirements. Using the MoSCoW method made it clear what must be built first for the MVP, ensuring compliance and Garda vetting rules are prioritized over extra features
+## 5. Reflection
+This week helped me understand how to transform vague stakeholder statements into clear and testable requirements. CARS analysis helped identify missing information, while MoSCoW helped organise requirements by priority.
+I also learned that priorities and technical targets should not be treated as confirmed without stakeholder agreement. Traceability is important because it connects requirements to their sources and verification methods.
+This analysis provides a foundation for the use case and activity diagrams in the following weeks.
