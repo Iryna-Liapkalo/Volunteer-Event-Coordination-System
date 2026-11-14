@@ -1,1 +1,38 @@
+# Week 8 — Quality Requirements and Prioritisation
 
+
+## 1. Quality Requirements
+This week, I reviewed the quality requirements for the Community Volunteer & Event Coordination System
+NFR01 — Usability (proposed): At least 4 out of 5 first-time volunteers should be able to find an event and complete an application without assistance during a usability test.
+NFR02 — Performance (proposed): Under a load of 25 concurrent users, at least 95% of event searches should display results within 3 seconds
+These targets are proposals and require confirmation from stakeholders
+
+
+## 2. MoSCoW Prioritisation
+The following priorities are provisional:
+
+Must:FR01 Account Registration, FR02 Volunteer Profile Management, FR04 Event and Role Management, FR05 Qualification Verification.
+Should:FR03 Upload Qualification Evidence, FR06 Event Change Notifications, FR07 Roster Management.
+Could: Waitlist and calendar view
+Won't: No requirements have been placed in this category because no release exclusions have been confirmed
+FR08 — Submit Application — remains a candidate requirement pending confirmation
+
+
+## 3. Prototype Updates
+I reviewed and updated all five Week 7 prototype screens:
+Browse Events
+Role Details and Requirements
+Application Form
+Validation Error
+Application Submitted
+The updated screens help demonstrate how volunteers interact with the system and how the requirements could be implemented
+
+
+## 4. Open Questions
+What response time do stakeholders expect when searching for events
+How should usability be measured and approved
+Who verifies volunteer qualifications?
+What should happen when Garda vetting is pending or expired
+
+## 5. Reflection
+This week's work helped me understand how to make quality requirements measurable and how to prioritise functional requirements using MoSCoW. The proposed targets and priorities still need stakeholder validation.
