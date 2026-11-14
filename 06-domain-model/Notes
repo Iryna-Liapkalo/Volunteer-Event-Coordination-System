@@ -14,24 +14,23 @@
 
 ## Part B — Identify Domain Concepts
 
-### Task B1: Candidate Concept Table
 
-| Candidate | Class, Attribute, or Action? | Supporting Requirement |
-| --- | --- | --- |
-| Student | Class | FR01 |
-| Booking | Class | FR01, FR02, FR03 |
-| Start date | Attribute | FR03 |
-| End date | Attribute | FR03 |
-| Equipment | Class | FR01, FR02, FR05 |
-| Review | Action | FR04 |
-| Staff Member | Class | FR04, FR05 |
+### Task B1: Candidate Concept Table
+Candidate | Class, Attribute, or Action? | Supporting Requirement 
+Student | Class | FR01 
+Booking | Class | FR01, FR02, FR03 
+Start date | Attribute | FR03 
+End date | Attribute | FR03 
+Equipment | Class | FR01, FR02, FR05 
+Review | Action | FR04 
+Staff Member | Class | FR04, FR05 
 
 
 ### Task B2: Core Domain Classes Justification
-1. Student: Represents the primary user who requests and holds equipment reservations within the system
-2. Booking: Represents the central transactional domain record containing reservation dates, status, and item associations
-3. Equipment: Represents the tangible resource being reserved and managed for availability
-4. Staff Member: Represents the administrative role responsible for reviewing requests and overseeing equipment availability
+Student: Represents the primary user who requests and holds equipment reservations within the system
+Booking: Represents the central transactional domain record containing reservation dates, status, and item associations
+Equipment: Represents the tangible resource being reserved and managed for availability
+Staff Member: Represents the administrative role responsible for reviewing requests and overseeing equipment availability
 
 
 ### Task B3: Identification of Uncertainty
@@ -54,34 +53,33 @@ Target Stakeholder: College Facilities Manager / System Administrator
 ## Part F — Model Verification
 
 ### Task F1: Requirements-to-Model Check Table
-
-| Requirement | Where represented in diagram? | Fully represented? |
-
-| FR01 | Student — Booking association | Partially (Student side multiplicity requires confirmation) |
-| FR02 | Booking — Equipment association with 1 at Equipment end | Yes |
-| FR03 | startDate and endDate attributes in Booking class | Yes |
-| FR04 | Staff Member — Booking association (reviews) | Partially (Reviewer assignment rule unconfirmed) |
-| FR05 | Staff Member — Equipment association (manages availability of) | Yes |
-| FR06 | Candidate status attribute in Booking class | Needs clarification (Approval workflow logic not detailed)
+Requirement | Where represented in diagram? | Fully represented? 
+FR01 | Student — Booking association | Partially (Student side multiplicity requires confirmation) 
+FR02 | Booking — Equipment association with 1 at Equipment end | Yes 
+FR03 | startDate and endDate attributes in Booking class | Yes 
+FR04 | Staff Member — Booking association (reviews) | Partially (Reviewer assignment rule unconfirmed) 
+FR05 | Staff Member — Equipment association (manages availability of) | Yes 
+FR06 | Candidate status attribute in Booking class | Needs clarification Approval workflow logic not detailed
 
 
 ## Part G — Campus Workshop Registration (New Example)
-
 ### Task G5: Interpretation Statements
-1. One Student can have 0..(zero or many) Registration records
-2. Each Registration belongs to 1 (exactly one) Student
-3. One Workshop can have 0..(zero or many) Registration records
-4. Each Registration is for 1 (exactly one) Workshop
+One Student can have 0..(zero or many) Registration records
+Each Registration belongs to 1 (exactly one) Student
+One Workshop can have 0..(zero or many) Registration records
+Each Registration is for 1 (exactly one) Workshop
 
 
 ## Part H — Assessed Individual Project Application
 Scenario A: Community Volunteer & Event Coordination System
 
+
 ### Task H1: Candidate Domain Concepts
-1. Volunteer: The community member applying for event roles
-2. Event: The activity organized for community coordination
-3. EventRole: Specific positions/tasks within an event e.g., restricted roles requiring Garda vetting
-4. Application: The formal submission made by a volunteer to join a specific role
+Volunteer: The community member applying for event roles
+Event: The activity organized for community coordination
+EventRole: Specific positions/tasks within an event e.g., restricted roles requiring Garda vetting
+Application: The formal submission made by a volunteer to join a specific role
+
 
 ### Task H2 & H3: Class Associations & Multiplicities
 Volunteer (1) — makes — (0..*) Application
@@ -90,6 +88,7 @@ Applicatio (0..*) — for — (1) EventRole
   Each Application is submitted for exactly one EventRole; an EventRole can receive zero or many Applications
 EventRole (1..*) — belongs to — (1) Event
   Each Event has one or many EventRoles; an EventRole belongs to exactly one Event
+
 
 ### Task H4: Open Question / Assumption
 Question: Can a volunteer submit multiple applications for different roles within the same event, or are they restricted to one application per event?
