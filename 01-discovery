@@ -1,11 +1,13 @@
 # Week 1 — Initial Discovery & Project Context
 
+
 ## 1. Facts
 People sign up using emails, phone calls, paper forms, or spreadsheets instead of one central place
 Event organisers spend hours matching the right volunteers to the right tasks by hand
 Volunteers often do not know which events actually need help
 It is hard to let everyone know quickly when an event schedule changes or gets cancelled
-Some tasks need specific skills, background checks, or qualifications (e.g., Garda vetting/first aid)
+Some tasks need specific skills, background checks, or qualifications e.g., Garda vetting/first aid
+
 
 ## 2. Assumptions
 Organisers and administrative staff have reliable internet access and web browsers during operational hours
@@ -13,58 +15,65 @@ Volunteers prefer automated digital notifications (email/SMS/app push) over phon
 Each event or activity role has a defined maximum capacity of volunteers it can accept
 Volunteers have basic digital literacy to create an account and view event schedules online
 
+
 ## 3. Unknowns
 How are volunteer qualifications, certifications, and background checks (e.g., Garda vetting) currently verified and who signs off on them
 Who holds the exact authority to create, modify, or cancel a community event or specific volunteer role
 What specific data retention and privacy restrictions apply to sharing volunteer contact details with team leaders
 What existing external calendar or identity systems (if any) need to integrate with the new platform
 
+
 ## 4. Stakeholders
 Event Organiser: Needs automated matching tools and quick group communication. Concern: Last-minute volunteer cancellations leaving key roles open
 General Volunteer: Needs clear schedule visibility, easy sign-up, and timely notifications. Concern: Missing schedule changes or receiving irrelevant updates
-Skilled Volunteer: Needs role-specific assignments matching verified qualifications (e.g., first aid, heavy machinery license). Concern: Being assigned to generic/unqualified tasks
+Skilled Volunteer: Needs role-specific assignments matching verified qualifications e.g., first aid, heavy machinery license. Concern: Being assigned to generic/unqualified tasks
 IT Support / System Administrator: Needs simple user management, role-based access control, and low system maintenance. Concern: Security vulnerabilities and system downtime
 Privacy / Data Protection Officer: Needs strict compliance with GDPR, explicit consent tracking, and data minimization. Concern: Unauthorized access to volunteers' personal contact details
 Community Members: Need reliable event execution and clear public communication. Concern: Poorly organized events or cancelled activities without notice
 Sponsors / Funders: Need clear impact reports showing volunteer engagement statistics. Concern: Lack of transparency or misuse of funding resources
 
+
+
 ## 5. Goals
-Goal 1 Efficiency: Reduce the manual administrative time spent matching volunteers to events by at least 60%.
-Goal 2 Communication: Eliminate double-bookings and ensure 100% of registered volunteers receive automated notifications within 5 minutes of an event cancellation or schedule update
-Goal 3 Compliance & Quality: Prevent unqualified or unvetted volunteers from being assigned to restricted or specialized event roles
+Goal 1 — Efficiency: The system should help the organisation reduce the manual administrative effort involved in matching volunteers to suitable event roles.
+Goal 2 — Communication: The system should help volunteers receive relevant information about event schedule changes and cancellations.
+Goal 3 — Qualification and Safety: The system should help organisers identify whether volunteers have the qualifications or verification status required for specific roles.
+
+
 
 ##7. Scope
 In Scope
--Volunteer registration and profile management.
--Event and volunteer-role information.
--Volunteer applications and assignments.
--Tracking relevant qualifications and verification status.
--Communication about event changes.
+Volunteer registration and profile management
+Event and volunteer-role information
+Volunteer applications and assignments
+Tracking relevant qualifications and verification status
+Communication about event changes.
 Out of Scope
--Processing volunteer payments.
--Managing event finances and sponsorship payments.
--Conducting Garda vetting directly.
--Replacing official external qualification-verification authorities.
+Processing volunteer payments.
+Managing event finances and sponsorship payments.
+Conducting Garda vetting directly.
+Replacing official external qualification-verification authorities
+
 
 
 8. Candidate Requirements
 Functional Requirements
--FR01: The system shall allow volunteers to register and provide their relevant information.
--FR02: The system shall allow organisers to create and manage events and volunteer roles.
--FR03: The system shall allow volunteers to view available event opportunities.
- FR04: The system shall allow organisers to assign volunteers to event roles.
+FR01: The system shall allow volunteers to register and provide their relevant information
+FR02: The system shall allow organisers to create and manage events and volunteer roles
+FR03: The system shall allow volunteers to view available event opportunities
+FR04: The system shall allow organisers to assign volunteers to event roles
 Non-Functional Requirement
-
--NFR01: The system shall restrict access to volunteer personal information to authorised users.
+NFR01: The system shall restrict access to volunteer personal information to authorised users.
 
 
 
 9. Requirement Surgery
 Vague statement: The system should be easy to use.
-Problem: The term “easy” is subjective and cannot be verified without a defined criterion.
-Clarification question: What tasks should a first-time volunteer be able to complete without assistance?
-Possible improved requirement: The system shall allow a registered volunteer to view available events and submit an application for a selected event.
-Verification: Conduct a task-based walkthrough using a representative volunteer account.
+Problem: The term “easy” is subjective and cannot be verified without a defined criterion
+Clarification question: What tasks should a first-time volunteer be able to complete without assistance
+Possible improved requirement: The system shall allow a registered volunteer to view available events and submit an application for a selected event
+Verification: Conduct a task-based walkthrough using a representative volunteer account
+
 
 ## 6. Reflection
-Starting with a problem-first approach rather than jumping straight into proposing features (like an "iOS app" or "AI matching algorithm") made it clear that the core issue is process coordination and verified tracking, not just UI design. Categorizing facts separately from assumptions prevented making unverified technical decisions early on. Identifying non-user stakeholders like the Privacy Officer and Sponsors brought crucial GDPR and reporting requirements to light before designing any database schema or interface mockup.
+Starting with a problem-first approach rather than jumping straight into proposing features like an iOS app or AI matching algorithm made it clear that the core issue is process coordination and verified tracking, not just UI design. Categorizing facts separately from assumptions prevented making unverified technical decisions early on. Identifying non-user stakeholders like the Privacy Officer and Sponsors brought crucial GDPR and reporting requirements to light before designing any database schema or interface mockup.
