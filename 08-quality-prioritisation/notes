@@ -1,38 +1,46 @@
 # Week 8 — Quality Requirements and Prioritisation
 
-
 ## 1. Quality Requirements
-This week, I reviewed the quality requirements for the Community Volunteer & Event Coordination System
-NFR01 — Usability (proposed): At least 4 out of 5 first-time volunteers should be able to find an event and complete an application without assistance during a usability test.
-NFR02 — Performance (proposed): Under a load of 25 concurrent users, at least 95% of event searches should display results within 3 seconds
-These targets are proposals and require confirmation from stakeholders
+This week I turned vague quality statements into measurable candidate requirements for the Community Volunteer & Event Coordination System. All targets are **proposed** and need confirmation from stakeholders.
 
+iD | Statement | Type | Priority | Source | Rationale | Verification 
+NFR01 | In a usability test with representative first-time volunteers, at least 4 out of 5 shall find an event and submit an application within 3 minutes without assistance. | Usability | Should (provisional) | [PROPOSED — confirm with stakeholders] | Volunteers have varied digital skills; signing up should not need help. | Task-based usability test. Depends on FR08, which is still a candidate. 
+NFR02 | With 25 concurrent users, at least 95% of event searches by date and town shall display results within 3 seconds. | Performance | Should (provisional) | [PROPOSED — confirm with stakeholders] | Slow search discourages volunteers from browsing events. | Timed test on a sample event list; record the time between the search request and the displayed results; at least 95 of 100 attempts within 3 s. 
+NFR03 | Volunteer phone numbers and email addresses shall be visible only to authorised users who need them for their assigned role. | Privacy / Security | Must (provisional) | [PROPOSED — confirm with stakeholders] | Volunteer contact details are personal data; the Privacy Officer concern was raised in Week 1. | Access-control test with different accounts volunteer, organiser, unauthorised user. Who counts as authorised is an open question. 
+NFR04 | All controls in the application journey (browse, select role, submit) shall be operable using the keyboard only. | Accessibility | Should (provisional) | [PROPOSED — confirm with stakeholders] | Some volunteers cannot use a mouse. | Complete the journey with the keyboard only; focus stays visible. This is not a full WCAG 2.2 assessment. 
+
+The numbers in NFR01 and NFR02 are examples, not agreed targets. Access-control wording in NFR03 could also be treated as a functional requirement with a security rationale; I classify it as Privacy / Security because it constrains who can see the data.
 
 ## 2. MoSCoW Prioritisation
-The following priorities are provisional:
+These priorities are provisional and need stakeholder confirmation.
 
-Must:FR01 Account Registration, FR02 Volunteer Profile Management, FR04 Event and Role Management, FR05 Qualification Verification.
-Should:FR03 Upload Qualification Evidence, FR06 Event Change Notifications, FR07 Roster Management.
-Could: Waitlist and calendar view
-Won't: No requirements have been placed in this category because no release exclusions have been confirmed
-FR08 — Submit Application — remains a candidate requirement pending confirmation
+Priority | Items | Reason / workaround 
+
+Must | FR01 Account Registration | Without accounts there are no volunteers in the system. 
+Must | FR02 Volunteer Profile Management | Skills and availability are needed to match volunteers to roles. 
+Must | FR04 Event and Role Management | Without events and roles there is nothing to apply for. 
+Must (provisional) | FR05 Qualification Verification | Core safety rule for restricted roles. It depends on the open question of who verifies qualifications. 
+Must (provisional) | FR08 Submit Application | This is the volunteer's main task, but it is still a candidate pending confirmation. 
+Should | FR03 Upload Qualification Evidence | Important, but evidence could be recorded by an authorised person instead. This is also a dependency of FR05. 
+Should | FR06 Event Change Notifications | Valuable; organisers could contact volunteers directly as a workaround. 
+Should | FR07 Roster Management | Useful for organisers; a spreadsheet could be used temporarily. 
+Could | Waitlist, calendar view (candidates, no IDs yet) | Not supported by the scenario; decisions needed. 
+Won't (this release) | None assigned |No release exclusions have been confirmed. 
 
 
 ## 3. Prototype Updates
-I reviewed and updated all five Week 7 prototype screens:
-Browse Events
-Role Details and Requirements
-Application Form
-Validation Error
-Application Submitted
-The updated screens help demonstrate how volunteers interact with the system and how the requirements could be implemented
 
+The prototype is used to explore requirements not to show how they will be implemented
 
 ## 4. Open Questions
-What response time do stakeholders expect when searching for events
-How should usability be measured and approved
-Who verifies volunteer qualifications?
-What should happen when Garda vetting is pending or expired
+
+Question | Who can answer 
+
+1 | What search response time and load do stakeholders expect? | Event Organiser, IT Support 
+2 | How should usability be measured, and who are the representative volunteers? | Volunteers, Event Organiser 
+3 | Who verifies volunteer qualifications? | Event Organiser, Privacy Officer 
+4 | What should happen when Garda vetting status is pending or expired? | Event Organiser, Privacy Officer 
+5 | Who counts as an authorised user for volunteer contact details? | Privacy Officer 
 
 ## 5. Reflection
-This week's work helped me understand how to make quality requirements measurable and how to prioritise functional requirements using MoSCoW. The proposed targets and priorities still need stakeholder validation.
+This week I learned to turn words like easy and fast into clear statements with an operation, conditions, a threshold, and a check. I also gave each priority a reason. I noticed that FR05 depends on who verifies qualifications, which is still unresolved, so I marked it provisional. Next, I will confirm the targets and priorities with stakeholders before treating them as agreed.
