@@ -1,64 +1,69 @@
 # Week 3 — Requirements Analysis, Specification & Quality
 
 ## 1. Requirements Analysis — CARS Matrix
-The purpose of requirements analysis is to turn vague stakeholder statements into clear and testable requirements.
-Original statement | Refined requirement | Type 
+The purpose of requirements analysis is to turn vague stakeholder statements into clear, verifiable requirements. All targets marked "proposed" need stakeholder confirmation.
+Original statement | Diagnosis | Refined requirement | Type | Open question 
 
-Volunteers need to register quickly. | FR01: The system shall allow volunteers to create an account. | Functional 
-Volunteers need to provide their information. | FR02: The system shall allow volunteers to maintain their skills and availability information. | Functional 
-Volunteers need to upload documents. | FR03: The system shall allow volunteers to upload qualification evidence. | Functional 
-Check if volunteers are vetted. | FR05: The system shall restrict applications for designated roles to volunteers whose required qualifications are recorded as verified. | Functional 
-The system must be easy to use. | NFR01: First-time volunteers should be able to find events and submit applications without assistance. | Usability 
-The system must be fast. | NFR02: Event searches should meet an agreed response-time target under peak usage. | Performance 
+Volunteers need to register quickly. | "Quickly" is vague. | FR01: The system shall allow a volunteer to create an account. | Functional | Which personal information is required? 
+Volunteers need to provide their information. | "Information" is unspecified. | FR02: The system shall allow a registered volunteer to record and update their skills and availability. | Functional | Which skills and availability details are needed?
+Volunteers need to upload documents. | Which documents? Who checks them? | FR03: The system shall allow a volunteer to upload evidence of their qualifications. | Functional | Which file types are accepted? 
+We need a calendar that everyone can see. | "Everyone" is ambiguous. | FR08: The system shall allow a volunteer to view upcoming events that need volunteers. | Functional | Which event details are public? 
+Volunteers need to apply for events. | Application process not described. | FR09: The system shall allow a registered volunteer to submit an application for a role at an event. | Functional | Can a volunteer apply for several roles? 
+Organisers manage events. | Several actions combined. | FR04: The system shall allow an authorised organiser to create, edit and cancel events and volunteer roles. | Functional | Who is authorised to cancel an event? 
+Roles have limits and prerequisites. | Combined in one sentence. | FR10: The system shall allow an authorised organiser to set a capacity and qualification prerequisites for each role. | Functional | What counts as a prerequisite? 
+Check if volunteers are vetted. | "Vetted" is unclear. | FR05: The system shall restrict applications for designated roles to volunteers whose required qualifications are recorded as verified. | Functional | Who verifies? What if pending or expired? 
+Volunteers must know about changes. | Which changes and how? | FR06: The system shall notify volunteers registered for an event when that event is cancelled or its details change. | Functional | Which channel is acceptable? 
+Organisers need volunteer lists. | Several actions combined. | FR07: The system shall allow an authorised organiser to view and confirm the volunteer roster for an assigned event. | Functional | When must rosters be finalised? 
+Organisers may want lists outside the system. | Not supported by the scenario. | FR11 (candidate): The system shall allow an authorised organiser to export a roster. | Functional | Is export needed at all? 
+The system must be easy to use. | "Easy" is not measurable. | NFR01: In a usability test, at least 90% of first-time volunteers shall find an event and submit an application within 3 minutes without assistance. | Usability | Who are representative users? 
+The system must be fast. | No operation, load or time. | NFR02: With 25 concurrent users, at least 95% of event searches shall return results within 2 seconds. | Performance | What is the real peak load? 
+Volunteer data must be protected. | No asset, no who. | NFR03: Volunteer phone numbers and email addresses shall be visible only to authorised users who need them for their assigned role. | Security / Privacy | Who is authorised? 
+The system must be available. | No window. | NFR04: During agreed operating hours each month, registration shall be available at least 99.5% of the time, measured by agreed monitoring. | Availability | What are the operating hours? 
 
-Specific usability and performance targets still need stakeholder agreement.
+The numbers in NFR01, NFR02 and NFR04 are **proposed**, not agreed.
 
 ## 2. MoSCoW Prioritisation
-The following priorities are provisional recommendations and require stakeholder confirmation.
+These priorities are provisional and require stakeholder confirmation.
 
-Must Have
-FR01 — Volunteer account registration.
-FR02 — Volunteer profile management.
-FR04 — Event and role management.
-FR05 — Qualification verification restrictions.
+Priority | Items | Reason 
 
-Should Have
-FR03 — Upload qualification evidence.
-FR06 — Notifications about event changes
-FR07 — Roster management and export
+Must | FR01, FR02, FR04, FR08, FR09 | Without registration, events and applications the core service does not work. 
+Must (provisional) | FR05 | Core safety rule, but depends on the open question of who verifies qualifications. 
+Should | FR03, FR06, FR07, FR10 | Important; an organiser-managed workaround may exist, to be confirmed. 
+Could | FR11 (export), calendar view (candidate), waitlist (candidate) | Not supported by the scenario; need decisions. 
+Won't (this release) | None assigned | No stakeholder has confirmed any exclusion. 
 
-Could Have
-Waitlist functionality
-Calendar view of upcoming events
-
-Won't Have This Time
-
-No features are assigned to this category because no stakeholder has confirmed any exclusions for the current release.
+Dependency: FR05 needs verified status to be recorded. Whether FR03 (upload) is the way to do this, or an authorised person records it, is an open question.
 
 ## 3. Requirements Traceability
-Traceability connects requirements to their sources, goals and verification methods.
+ID | Source | Goal | Priority | Status | Verification and expected result 
 
-ID | Source | Verification 
-FR01 | Volunteers | Test account registration. 
-FR02 | Volunteers | Check that profile information can be updated
-FR03 | Volunteers / Organisers | Test qualification document upload
-FR04 | Event Organisers | Test event and role creation. 
-FR05 | Organisers / Privacy Officer | Test applications using verified and unverified qualification statuses
-FR06 | Volunteers / Organisers | Test notifications after event changes
-FR07 | Event Organisers | Test roster viewing and export. 
-Example — FR05: This requirement supports the goal of ensuring that volunteers meet the qualification conditions for restricted roles. The exact verification process and rules for pending or expired qualifications require stakeholder confirmation.
+FR01 | Scenario | Efficiency | Must | Candidate | Register with valid data; the account exists and can be used to log in. 
+FR02 | Scenario | Efficiency | Must | Candidate | Update skills and availability; changes are saved and shown. 
+FR03 | Scenario | Qualification and safety | Should | Candidate | Upload a file; it is stored and linked to the volunteer. 
+FR04 | Scenario | Efficiency | Must | Candidate | Create, edit and cancel an event and role; changes appear in the event list. 
+FR05 | Scenario | Qualification and safety | Must (prov.) | Candidate | Apply with verified and unverified status; only verified is accepted. 
+FR06 | Scenario | Communication | Should | Candidate | Change an event; registered volunteers receive a notification. 
+FR07 | Scenario | Efficiency | Should | Candidate | Open a roster; authorised organiser can view and confirm it. 
+FR08 | Scenario | Communication | Must | Candidate | Open the event list; upcoming events with required details are shown. 
+FR09 | Scenario | Efficiency | Must | Candidate | Submit an application; it is recorded and visible to the organiser. 
+FR10 | Scenario | Qualification and safety | Should | Candidate | Set capacity and prerequisites on a role; they are stored and applied. 
+FR11 | Proposed | Efficiency | Could | Candidate | Export a roster; the file lists the confirmed volunteers. 
+NFR01 | Proposed | Efficiency | Should | Proposed | Usability test with representative volunteers. 
+NFR02 | Proposed | Efficiency | Should | Proposed | Timed search test under agreed load. 
+NFR03 | Privacy concern | Qualification and safety | Must | Proposed | Attempt access with different accounts; only authorised users see contacts. 
+NFR04 | Proposed | Efficiency | Could | Proposed | Monitor availability over an agreed period. |
 
 ## 4. Requirement Quality and Open Questions
-Requirements should be clear, specific, feasible, unambiguous, verifiable and traceable.
-The following questions still need clarification:
-1. Who is responsible for verifying volunteer qualifications?
-2. What happens when a qualification is pending or expired?
-3. Can volunteers view restricted roles before verification?
-4. What response time is acceptable for event searches?
-5. How should usability be measured?
-Relevant stakeholders include Event Organisers, Volunteers, the Privacy Officer and IT Support.
+
+Question | Who can answer 
+
+1 | Who is responsible for verifying volunteer qualifications? | Event Organisers, Privacy Officer |
+2 | What happens when a qualification is pending or expired? | Event Organisers |
+3 | Can volunteers view restricted roles before verification? | Event Organisers, Privacy Officer |
+4 | What response time and load are acceptable for searches? | Event Organisers, IT Support |
+5 | How should usability be measured, and with which users? | Volunteers, Event Organisers |
+6 | What is the latest registration time for each role type? | Event Organisers |
 
 ## 5. Reflection
-This week helped me understand how to transform vague stakeholder statements into clear and testable requirements. CARS analysis helped identify missing information, while MoSCoW helped organise requirements by priority.
-I also learned that priorities and technical targets should not be treated as confirmed without stakeholder agreement. Traceability is important because it connects requirements to their sources and verification methods.
-This analysis provides a foundation for the use case and activity diagrams in the following weeks.
+This week showed me how a vague stakeholder statement becomes a verifiable requirement once I add an actor, a condition and a check. I also found that my first catalogue was missing the volunteer's main task, viewing events and applying, which the analysis step exposed. Next I will validate the proposed targets and priorities with stakeholders before treating them as agreed.
