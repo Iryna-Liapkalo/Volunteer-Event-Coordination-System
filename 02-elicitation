@@ -4,79 +4,103 @@
 
 ### 1.1 Interview Plan: Event Organiser
 Goal: Understand current manual matching pain points and notification workflows
-Open Questions:
-How do you currently match volunteers to specific event roles
-What happens when a volunteer cancels at the last minute
-How do you verify if a volunteer has the required qualifications e.g., Garda vetting or first aid
-Probing / Clarifying Questions:
-When you say an event is "urgent", what exact criteria determines that urgency
-What specific information do you need to see before approving a volunteer for a restricted task
+
+Open questions:
+How do you currently match volunteers to specific event roles?
+What happens when a volunteer cancels at the last minute?
+How do you check whether a volunteer has the skills or experience an activity needs?
+
+Probing / clarifying questions:
+You said matching takes a lot of time. Which part takes the longest?
+What information do you need about a volunteer before assigning them to an activity that needs particular skills?
 
 ### 1.2 Interview Plan: General & Skilled Volunteers
 Goal: Understand registration barriers and notification preferences
-Open Questions:
-How do you currently find out about upcoming community events that need help
-What issues do you encounter when an event schedule changes or is cancelled
-Closed / Fact-Checking Questions:
-Do you currently receive event reminders via email or messaging apps?
 
-###1.3 Interview Plan: Privacy / Security Officer
-Goal: Understand privacy requirements and access restrictions for volunteer information.
-Open Questions:
+Open questions:
+How do you currently find out about upcoming community events that need help?
+What issues do you encounter when an event schedule changes or is cancelled?
+
+Closed / fact-checking question:
+Do you currently receive event reminders by email or messaging apps?
+
+### 1.3 Interview Plan: Privacy / Security Officer
+Goal: Understand privacy requirements and access restrictions for volunteer information
+
+Open questions:
 What personal information can event organisers access about volunteers?
-Under what circumstances can volunteer information be shared with team leaders?
-Who is responsible for approving access to information about volunteers working with vulnerable groups?
+In what circumstances can volunteer information be shared with other people involved in an event?
+Who decides who may see information about volunteers' skills or qualifications?
 
-###1.4 Interview Plan: IT Support / System Administrator
-Goal: Understand technical and operational constraints.
-Open Questions:
-Are there existing systems that the new system should integrate with?
+### 1.4 Interview Plan: IT Support / System Administrator
+Goal: Understand technical and operational constraints
+
+Open questions:
+Are there existing systems that the new system should work with?
 What technical or maintenance problems should the system avoid?
 Who should be responsible for managing user accounts and access permissions?
 
+### 1.5 Stakeholders
+Stakeholder | Role | Direct user? | Need or concern 
+
+Event Organiser | Plans events and roles | Yes | Spend less time matching volunteers; know who is attending 
+Volunteer | Takes part in events | Yes | Know which activities need help; hear about changes 
+Volunteer with particular skills | Takes roles needing skills or experience | Yes | Be considered for suitable roles 
+IT Support / Administrator | Supports the system | To be confirmed | Manage access; keep volunteer data in one place 
+Privacy / Data Protection role (to be confirmed) | Protects personal data | No | Personal data shared only as needed 
+Community members | Attend events | No | Events run as planned; cancellations communicated 
+
+### 1.6 Unknowns and Who Could Answer
+Unknown | Who could answer? 
+
+Who can create, change or cancel an event? | Organisation management 
+Who verifies volunteers' skills or qualifications? | Event Organiser 
+Which volunteer information can different users see? | Privacy / Data Protection role 
 
 ## 2. Stakeholder Conflicts & Resolution Analysis
-Conflict Scenario: Volunteer Registration Flexibility vs. Event Organiser Preparation Time & Compliance
-Volunteer Perspective: Volunteers may want to sign up at short notice without waiting for profile approval.
-Event Organiser Perspective: Organisers may need sufficient time to finalise rosters, prepare equipment and check qualifications.
-Privacy/Security Officer Perspective: Access to information about volunteers working with vulnerable groups may require specific approval and access restrictions.
-Resolution Strategy:
-Different registration deadlines may be needed for general and restricted roles. However, the exact deadlines and qualification verification rules must be confirmed with event organisers and the Privacy/Security Officer before they become agreed requirements.
-Open Questions:
-What is the latest acceptable registration time for each role type?
-Who is responsible for verifying volunteer qualifications?
-When must event organisers finalise volunteer rosters?
+Conflict: Volunteer sign-up flexibility vs. organiser preparation time
 
+Volunteer perspective: Volunteers may want to sign up at short notice.
+Event Organiser perspective: Organisers may need time to finalise rosters, prepare equipment and check skills or experience.
+Privacy / Security Officer perspective: Access to information about volunteers' skills or qualifications may need restrictions.
 
+Resolution strategy: Different registration deadlines may be needed for different roles. The deadlines and the checking rules must be confirmed with organisers and the privacy role before they become requirements.
+
+Open questions:
+What is the latest acceptable registration time for each type of role
+Who is responsible for checking volunteers' skills or qualifications
+When must organisers finalise volunteer rosters
 
 ## 3. Candidate Requirements Catalogue
+All requirements below are candidates: proposed — requires confirmation.
 
 ### 3.1 Functional Requirements
-FR01 — Account Registration: The system shall allow volunteers to register an account and provide the required personal information.
-FR02 — Volunteer Profile: The system shall allow registered volunteers to record their skills and general availability.
-FR03 — Qualification Documents: The system shall allow volunteers to upload documents providing evidence of their qualifications.
-FR04 — Event Creation: The system shall allow authorised event organisers to create events, specify required volunteer capacities, and set qualification prerequisites for each role.
-FR05 — Qualification Verification: The system shall restrict access to designated restricted roles to volunteers whose required qualifications are recorded as verified.
-FR06 — Automated Notifications: The system shall notify volunteers registered for an affected event when that event is cancelled or its details are changed.
-FR07 — Roster Management: The system shall allow authorised organisers to view, confirm, and export volunteer attendance rosters for their assigned events.
+FR01 — Account Registration: The system shall allow a person to register as a volunteer and provide the required personal information (information to be confirmed).
+FR02 — Volunteer Profile: The system shall allow a registered volunteer to record their skills and general availability.
+FR03 — Skills Information: The system shall allow a registered volunteer to record the skills or experience they have (how this is checked is to be confirmed).
+FR04 — Event Creation: The system shall allow an authorised organiser to create an event, specify the number of volunteers needed for each role, and record any skills or experience required for the role.
+FR05 — Role Suitability: The system shall show an authorised organiser whether a volunteer's recorded skills match the requirements of a role (who checks them is to be confirmed).
+FR06 — Notifications: The system shall notify volunteers registered for an event when it is cancelled or its details change.
+FR07 — Attendance List: The system shall allow an authorised organiser to view the list of volunteers attending their event.
 
 ### 3.2 Non-Functional Requirements
-NFR01 — Usability: At least 90% of first-time volunteer users shall be able to search for and register for an event within 3 minutes without assistance. This proposed target can be evaluated through usability testing with representative volunteers.
-NFR02 — Performance: Event availability searches shall return results within 2 seconds under normal peak usage conditions. This proposed target can be tested by measuring search response times under an agreed number of concurrent users.
-NFR03 — Security & Privacy: Volunteer personal contact details, such as phone numbers and email addresses, shall only be accessible to authorised users who require this information for their assigned responsibilities. This requirement can be verified through access-control testing using different user accounts.
-NFR04 — Availability: The system shall be available for volunteer registration 99.5% of the time during agreed standard operational hours. This proposed target can be verified by monitoring system availability over an agreed period.
+NFR01 — Usability: At least 90% of first-time volunteers shall be able to search for and register for an event within 3 minutes without assistance. Proposed target. Check: usability test with representative volunteers.
+NFR02 — Performance: Event searches shall return results within 2 seconds under normal peak use. Proposed target. Check: measure response times with an agreed number of concurrent users.
+NFR03 — Security & Privacy: Volunteer contact details shall only be accessible to authorised users who need them for their responsibilities. Check: access-control test with different user accounts (who is authorised is to be confirmed).
+NFR04 — Availability: The system shall be available for volunteer registration 99.5% of the time during agreed operational hours. Proposed target. Check: monitor availability over an agreed period.
 
-
-
-## 4. Requirement Surgery 
+## 4. Requirement Surgery
 
 ### Example 1
-Raw Stakeholder Statement: We need a calendar that everyone can see so people know what's happening.
-Analysis:The statement suggests a need for volunteers to access information about upcoming events. However the term everyone is ambiguous because different user groups may have different access permissions.
-Refined Functional Requirement: The system shall allow volunteers to view information about upcoming events that require volunteer support
-Open Question: Which event details should be publicly accessible, and which should only be visible to registered volunteers
-Verification: This requirement can be checked through a task-based walkthrough in which a volunteer attempts to find and view information about upcoming events that require volunteer support.
+Raw stakeholder statement: We need a calendar that everyone can see so people know what's happening.
 
+Analysis: The statement shows a need for volunteers to see upcoming events. "Calendar" is a possible solution, and "everyone" is ambiguous because different users may need different access.
 
-## 5. Reflection 
-I learned that proposed solutions and business rules should not be treated as confirmed requirements without stakeholder agreement. Any unclear deadlines, qualification verification procedures and access permissions must be recorded as open questions and clarified through further elicitation.
+Refined requirement: The system shall allow volunteers to view information about upcoming events that need volunteers.
+
+Open question: Which event details should anyone be able to see, and which only registered volunteers?
+
+Verification: Task-based walkthrough where a volunteer finds and views upcoming events.
+
+## 5. Reflection
+I learned that proposed solutions and business rules should not be treated as confirmed requirements without stakeholder agreement. Unclear deadlines, checking of skills and access permissions must be recorded as open questions and clarified through further elicitation.
