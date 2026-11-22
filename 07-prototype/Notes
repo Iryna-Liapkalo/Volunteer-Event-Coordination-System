@@ -1,96 +1,39 @@
-# Week 7 — Low-Fidelity Prototyping & Requirements Validation
+# Week 7 — Wireframes
 
+## Journey
+A volunteer finds an event and applies for a role.
 
-## 1. Prototyping Objectives & User Journey
-Selected User Journey: 
-A volunteer browses available community events, selects a restricted event role, checks the role requirements, completes an application form and submits an application for review.
-Purpose of the Prototype:
-The purpose of this prototype is to demonstrate how volunteers could interact with the Community Volunteer & Event Coordination System. It focuses on event browsing, role requirements, Garda Vetting checks, application submission and clear communication of application status.
-The prototype also aims to prevent misunderstandings by making it clear that submitting an application does not mean that the volunteer has been automatically approved.
-Fidelity Level:
-Low-fidelity wireframes were created using simple shapes, text labels, buttons and basic layouts. The focus is on functionality, navigation and requirements rather than visual appearance.
-Proposed Navigation (Dashboard | My Applications | Profile): Candidate UI links (requires stakeholder confirmation)
+## Screens
+Screen | Purpose | Requirement 
+1 Browse events | See events that need volunteers | FR08 
+2 Event roles | See the roles of one event | FR08, FR10 
+3 Apply for a role | Submit an application | FR09 
+4 Missing information | Show what happens if a field is empty | Candidate 
+5 Application sent | Confirm that the application was sent | FR09 
 
+## Design notes
+The screens use simple rectangles and text only. Data is fictional.
+Screen 5 says "This is not a confirmed place", because the scenario does not say that an application is approved automatically.
+Search, number of places and navigation are not shown, because they are not in the scenario.
 
-## 2. Prototype Screens
+## Candidate details (not confirmed)
+Which event details are shown on Screen 1
+Roles and required skills on Screen 2 (examples only)
+Fields in the application form on Screen 3
+The error message on Screen 4
+Contact details and notifications
 
+## Open questions
+Can a volunteer apply for several roles in the same event?
+How does the volunteer learn the decision?
+How are skills or experience checked?
 
-### Screen 1 — Browse Events
-Purpose: Allows volunteers to browse upcoming community events and identify opportunities that need support
-Key Elements:
-List of available community events
-Event names and basic information
-Search and filtering options
-Options to view event details
-Requirement Link: Candidate requirement for volunteers to browse available events.
-Related to FR04 — Event and Role Management
+## Findings from review
+Type of review: (self-review or peer-simulated)
 
+Finding / Evidence type / Next step 
+On Screen 2 it is not clear who checks the skills for a role.	Self-review	Ask Event Organiser how skills are checked.
+on Screen 4 the error message is a proposed rule, not an agreed one.	Candidate rule	Ask Event Organiser if the field must be filled.
+On Screen 5 the volunteer does not know how to learn the decision.	Self-review	Ask Event Organiser how volunteers are told.
 
-### Screen 2 — Role Details & Requirements
-Purpose: Displays information about a selected event role and explains any requirements that volunteers must meet before applying.
-Key Elements:
-Role description
-Required skills and qualifications
-Garda Vetting requirements for restricted roles
-Option to proceed to the application form
-Requirement Link: FR03 — Upload Qualification Evidence, and FR05 — Qualification Verification for Restricted Roles.
-
-
-### Screen 3 — Volunteer Application Form
-Purpose: Allows volunteers to enter the information required to apply for a selected event role
-Key Elements:
-Volunteer information
-Availability details
-Required confirmation fields
-Submit Application for Review button
-Option to return to the previous screen
-Requirement Link: FR08 — Candidate Requirement: Volunteer Application Submission
-Design Consideration:The wording of the submission button makes it clear that the volunteer is submitting an application rather than receiving immediate approval.
-
-
-### Screen 4 — Validation Error / Missing Information
-Purpose: Demonstrates how the system could inform volunteers when required information is missing or a qualification check is incomplete.
-Key Elements:
-Warning message for missing mandatory information
-Information about pending Garda Vetting verification
-Guidance on correcting the problem before resubmission
-Requirement Link:Candidate validation rules associated with FR05 and FR08
-Status: These validation rules require further stakeholder confirmation
-
-
-### Screen 5 — Application Submitted
-Purpose: Confirms that the volunteer's application has been submitted successfully.
-Key Elements:
-Application Submitted heading
-Pending Coordinator Review status
-Message explaining that the application has not yet been approved
-Return to Dashboard option
-Requirement Link: FR08 — Candidate Requirement: Volunteer Application Submission.
-Design Consideration: The screen confirms receipt of the application only. It does not imply automatic approval. The proposed coordinator review process requires further stakeholder confirmation.
-
-
-## 3. Walkthrough & Validation Findings Log
-A simulated peer walkthrough was used to evaluate the prototype.
-Walkthrough Scenario:
-A volunteer wants to apply for a community youth support role. The reviewer follows the screens to find the event, check the role requirements, complete the application and understand what happens after submission
-ID | Evidence Type | Finding | Action / Next Step 
-V01 | Simulated Peer Walkthrough | The application process could be misunderstood as immediate confirmation. | Use clear wording such as Submit Application for Review. 
-V02 | Self-Review | The handling of volunteers with pending or missing Garda Vetting information needs clarification. | Record an open question for the Event Coordinator and Privacy Officer
-V03 | Walkthrough Probe | Volunteers need to know how they will receive an application decision. | Consider a candidate requirement for email or dashboard notifications
-Validation Summary:
-The prototype helped identify areas where the system's behaviour and interface wording need to be clearer. In particular, the distinction between application submission and approval is important. The validation exercise also highlighted questions about qualification verification and application status notifications.
-The walkthrough was simulated and further feedback from actual volunteers and event coordinators would be useful.
-
-
-## 4. Open Questions & Unresolved Rules
-1. Application Notifications: How will volunteers be informed when their applications are approved or rejected? Should the system use email notifications, dashboard alerts or both?
-2. Garda Vetting Expiry: What should happen if a volunteer's Garda Vetting status expires while they have an upcoming event application or assignment
-3. Restricted Role Access: Should volunteers without verified qualifications be allowed to view restricted roles, or should those roles be hidden?
-4. Application Review:Should every application require coordinator review, or could some applications be accepted automatically
-5. Application Status:Which statuses should be supported, such as Submitted, Pending Review, Approved and Rejected
-
-## 5. Reflection
-Creating the low-fidelity prototype helped translate the requirements into a practical sequence of screens. It provided a clearer understanding of how volunteers could browse events, check role requirements and submit applications.
-The prototype also highlighted the importance of clear communication. Volunteers must understand that submitting an application does not guarantee a place at an event.
-The walkthrough identified unresolved questions about Garda Vetting, application validation and notifications. These issues should be discussed with stakeholders before the system is implemented.
-Overall, the prototype provides an initial visual representation of the proposed system and supports further requirements validation.
+Note: This review is not stakeholder validation
