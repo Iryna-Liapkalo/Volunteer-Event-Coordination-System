@@ -2,14 +2,13 @@
 
 
 ## Part A — Review of Earlier Work
-
 ### Task A1: Requirement Evidence Identification
-1. Which requirement tells us that Application is an important concept
-   A volunteer can submit an application for an event role
-2. Which requirement identifies attributes of Event or Application
-   Each event records a date, location, and required capacity
-3. Which requirements indicate relationships involving Event Organiser
-   Event organisers create community events and manage volunteer attendance rosters
+1. Which requirement tells us that Booking is an important concept
+   FR01 and FR02: a student can make more than one booking, and each booking identifies one equipment item.
+2. Which requirement identifies two attributes of Booking?
+   FR03: each booking records a start date and an end date
+3. Which requirements indicate relationships involving Staff Member?
+   FR04 staff review requests and FR05 staff manage equipment availability
 
 
 ## Part B — Identify Domain Concepts
@@ -36,7 +35,7 @@ Staff Member: Represents the administrative role responsible for reviewing reque
 ### Task B3: Identification of Uncertainty
 Candidate Attribute: emailAddress for Student or status for Booking
 Uncertainty: While recording an email or booking status is logically useful, FR01–FR06 do not explicitly state how notifications or approval states are stored.
-Target Stakeholder: College Facilities Manager / System Administrator
+Equipment manager: College Facilities Manager / System Administrator
 
 
 ## Part E — Multiplicity & Open Questions
@@ -45,7 +44,7 @@ Target Stakeholder: College Facilities Manager / System Administrator
 
 #### OPEN QUESTIONS Note
 1. Student — Booking: Can a booking be made jointly on behalf of multiple students, or is it strictly tied to exactly one student
-2. Booking — Equipment: How many historical or future bookings can reference the same equipment item over time (`0..*`)
+2. Booking — Equipment: How many bookings can reference the same equipment item over time
 3. Staff Member — Booking: Is each booking reviewed by exactly one assigned staff member, or can multiple staff members review the same request
 4. Staff Member — Equipment: Can multiple staff members manage the same equipment item, or is equipment divided among specific staff
 
@@ -62,34 +61,41 @@ FR05 | Staff Member — Equipment association (manages availability of) | Yes
 FR06 | Candidate status attribute in Booking class | Needs clarification Approval workflow logic not detailed
 
 
-## Part G — Campus Workshop Registration (New Example)
-### Task G5: Interpretation Statements
-One Student can have 0..(zero or many) Registration records
-Each Registration belongs to 1 (exactly one) Student
-One Workshop can have 0..(zero or many) Registration records
-Each Registration is for 1 (exactly one) Workshop
+## Part G — Campus Workshop Registration New Example
+One Student can have zero or many Registration records
+Each Registration belongs to exactly one Student
+One Workshop can have zero or many Registration records
+Each Registration is for exactly one Workshop
 
 
 ## Part H — Assessed Individual Project Application
 Scenario A: Community Volunteer & Event Coordination System
 
-
 ### Task H1: Candidate Domain Concepts
-Volunteer: The community member applying for event roles
-Event: The activity organized for community coordination
-EventRole: Specific positions/tasks within an event e.g., restricted roles requiring Garda vetting
-Application: The formal submission made by a volunteer to join a specific role
+Volunteer: a person who applies for event roles
+Event: an activity organised by the community organisation
+Role: a task in an event called EventRole in an earlier draft
+Application: a volunteer's request to take a role
+Event Organiser: a person who runs events
 
+### Task H2 & H3: Associations and Multiplicities
+Volunteer 1 — makes — 0..* Application. ASSUMED, to confirm.
+Application 0..* — for — 1 Role. SUPPORTED a volunteer applies for a role at an event
+Role 1..* — belongs to — 1 Event. SUPPORTED organisers create events and roles
+Event 0..* — organised by — 1 Event Organiser. ASSUMED, to confirm. The scenario does not say who manages events.
 
-### Task H2 & H3: Class Associations & Multiplicities
-Volunteer (1) — makes — (0..*) Application
-  One Volunteer can submit zero or many Applications; each Application belongs to exactly one Volunteer
-Applicatio (0..*) — for — (1) EventRole
-  Each Application is submitted for exactly one EventRole; an EventRole can receive zero or many Applications
-EventRole (1..*) — belongs to — (1) Event
-  Each Event has one or many EventRoles; an EventRole belongs to exactly one Event
+### Notes about the diagram
+The diagram has no names on the lines. The names above are the intended ones.
 
+Unconfirmed attributes (not in the scenario, confirmation required):
+Volunteer: vettingStatus, vettingExpiryDate, phoneNumber
+Role: vettingRequired, capacity
+Event: status
+Application: status
+Event Organiser: department
+
+Garda vetting is not in the scenario. These vetting attributes are candidates only. The scenario says only that some activities need particular skills or experience (requiredSkills).
 
 ### Task H4: Open Question / Assumption
-Question: Can a volunteer submit multiple applications for different roles within the same event, or are they restricted to one application per event?
-Target Stakeholder: Volunteer Event Coordinator / Compliance Officer
+Question: Can a volunteer apply for several roles in the same event, or only one?
+Target Stakeholder: Event Organiser
