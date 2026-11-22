@@ -35,7 +35,7 @@ Staff Member: Represents the administrative role responsible for reviewing reque
 ### Task B3: Identification of Uncertainty
 Candidate Attribute: emailAddress for Student or status for Booking
 Uncertainty: While recording an email or booking status is logically useful, FR01–FR06 do not explicitly state how notifications or approval states are stored.
-Equipment manager: College Facilities Manager / System Administrator
+Target Stakeholder: Equipment manager
 
 
 ## Part E — Multiplicity & Open Questions
