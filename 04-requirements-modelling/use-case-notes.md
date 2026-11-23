@@ -47,5 +47,3 @@ FR02 (maintain profile) and FR05 (restriction by verified qualifications) are li
 8. Should event creation and role management be separate functions?
 
 These questions need clarification from the Event Organiser and the Privacy / Compliance Officer.
-
-## 6. Reflection What the diagram helped me understand: the main goals of the volunteer (sign up, browse events, apply) and of the organiser (manage events), and that use cases should describe goals rather than screens or database operations.
