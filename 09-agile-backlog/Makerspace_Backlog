@@ -1,1 +1,100 @@
+# Week 9 — Makerspace Backlog
 
+Case: Community Makerspace workshops. Source: Week 9 lecture and lab. This case is separate from my project.
+
+## 1. Facts, unknowns, scope
+**Facts**
+F01: The makerspace advertises public workshops on a noticeboard.
+F02: Residents want to browse workshops by topic and date.
+F03: Residents want to see the title, venue, date and remaining places.
+F04: A resident submits a request for ONE workshop place.
+F05: The request is recorded with the resident's name and contact email.
+F06: A workshop organiser approves or rejects each request. Submitting does not guarantee a place.
+F07: The organiser may maintain workshop details. The centre manager confirms policies.
+
+**Unknowns**
+Unknown | Likely decision owner 
+
+Can residents book a group? | Centre manager 
+What are the cancellation rules? | Centre manager 
+Are automated reminders needed? | Centre manager 
+
+**Out of scope:** Online payment.
+
+## 2. Process and RE work
+Feature used: browse workshops by topic and date. These steps are examples, not tasks to build.
+
+Activity | Example 
+
+specification | Agree which workshop details are shown 
+Development | Build the browse page 
+Software validation | Check that results match the chosen topic and date 
+Evolution | After release, add a new topic 
+
+**Waterfall vs iterative**
+Order of work: Waterfall completes approved stages in order. Iterative repeats cycles of planning, building and feedback.
+Timing of feedback: In Waterfall, users often see the product late. In iterative, feedback comes after each cycle.
+
+## 3. Mini requirements catalogue
+ID | Requirement | Actor | Source | Planned check 
+
+FR01 | The system shall allow a resident to view workshops by topic and date. | Resident | F02 | Choose a topic and date; only matching workshops show 
+FR02 | The system shall show the title, venue, date and remaining places of a workshop. | Resident | F03 | Compare the detail view with test data 
+FR03 | The system shall allow a resident to submit a request for one workshop place with a name and contact email. | Resident | F04, F05 | Submit a test request; it is recorded 
+FR04 | The system shall allow an organiser to approve or reject a request. | Organiser | F06 | Approve and reject test requests 
+FR05 | The system shall allow an organiser to maintain workshop details. | Organiser | F07 | Edit a test workshop; changes show 
+NFR-C01 | Residents' names and emails shall be visible only to authorised users. | All | Proposed | Access test with two accounts 
+
+NFR-C01 is a candidate. It is NOT approved. Who is authorised is unknown.
+
+## 4. User stories and acceptance criteria
+**Story 1 (FR01):** As a resident, I want to filter workshops by topic and date, so that I can find workshops that suit me.
+AC1: Given workshops on different topics, when I choose a topic, only workshops on that topic are shown.
+AC2: When I choose a date, only workshops on that date are shown.
+
+**Story 2 FR03:** As a resident, I want to request one place on a workshop, so that I can attend it
+AC1: When I submit my name and contact email, the request is recorded
+AC2: The screen says the request was sent and that it is not a confirmed place.
+
+**Story 3 (FR04):** As an organiser, I want to approve or reject a request, so that I decide who gets a place.
+AC1: I can see the pending requests for a workshop.
+AC2: When I approve or reject, the decision is recorded with the request
+
+**AC vs DoD:** Acceptance criteria are conditions for one backlog item. The Definition of Done is a shared quality standard for every Increment.
+
+## 5. Product Backlog
+Order | Item | Status | Reason 
+
+1 | View and filter workshops (FR01, FR02) | Supported | Residents cannot request a place without finding a workshop 
+2 | Request one place (FR03) | Supported | This is the main goal of a resident 
+3 | Approve or reject a request (FR04) | Supported | The scenario says organisers decide 
+4 | Maintain workshop details (FR05) | Supported | Keeps workshop information correct 
+5 | Group reservations | Candidate | Not agreed 
+6 | Cancellation arrangements | Candidate | Not agreed 
+7 | Automated reminders | Candidate | Not agreed 
+
+**First two choices:** Items 1 and 2 are the core service. Without them nothing else has value.
+
+**Product Owner and policy:** The Product Owner orders the backlog. The centre manager confirms policies, so the Product Owner cannot decide group, cancellation or reminder rules alone.
+
+## 6. Sprint simulation
+**Sprint Goal:** Residents can find workshops and request one place
+
+**Sprint Backlog:** FR01, FR02, FR03
+Plan: show the workshop list; add the topic and date filter; add the request form; record the request; check the results.
+
+**Definition of Done (example):** The search is tested, works with the keyboard, has labelled fields and has no severe defects
+
+**Sprint Review:** A stakeholder suggests group booking. I record it as a candidate. Questions before any decision:
+1. How many places can one request ask for?
+2. Who approves the group booking rule? centre manager
+
+## 7. Own project Volunteer and Event Coordination
+**Story A (FR06):** As a volunteer, I want to view events that need volunteers, so that I know where help is needed.
+AC: Given events exist, when I open the event list, I see the events that need volunteers
+
+**Story B (FR07):** As a volunteer, I want to apply for a role in an event, so that the organiser can consider me.
+AC1: When I submit an application, it is recorded.
+AC2: The screen says it is not a confirmed place
+
+**Open question (not approved):** Can a volunteer apply for several roles in the same event?
