@@ -1,1 +1,93 @@
+# Week 10 — Requirements Quality Audit (Tree Care)
 
+Case: public service where residents report public-tree issues. Source: Week 10 lab.
+
+## 1. Evidence log
+**Supported facts**
+S01: Residents submit a public-tree issue with location, issue type and description.
+S02: The system assigns a reference number.
+S03: Residents can use the reference to check report status.
+S04: Authorised council officers review reports.
+S05: Officers record an outcome.
+S06: A public-service coordinator confirms policy.
+
+**Open questions** (decision owner: public-service coordinator)
+Q1: What are the emergency response times?
+Q2: Are photos required?
+Q3: Can reports be anonymous?
+
+## 2. Verify wording
+Weak statement | Problems 
+
+Reports will be handled quickly. | "Quickly" is not measurable. No actor. No condition
+The system shall manage everything about trees. | "Everything" is vague. It hides many actions. The system does not schedule crews. 
+
+**Corrected requirements**
+ID | Requirement | Source | Planned check 
+
+FR01 | The system shall allow a resident to submit a report with a location, issue type and description. | S01 | Walkthrough: submit a test report 
+FR02 | The system shall assign a reference number to each report. | S02 | Inspect: each test report has a number 
+FR03 | The system shall allow a resident to view the status of a report using its reference. | S03 | Walkthrough: enter a test reference 
+FR04 | The system shall allow an authorised officer to record the outcome of a report. | S04, S05 | Walkthrough: record an outcome on a test report 
+
+These are document checks. No software was tested.
+
+## 3. Verification and validation plan
+Verification (the requirements document) | Validation (stakeholder needs) 
+
+Check that each requirement has one actor, one action and a source. | Future: ask a public-service coordinator and a resident to walk through the report and status screens. 
+Check that "reference" is used the same way everywhere. 
+
+Limit: a self-review or peer simulation can find questions, but it cannot prove that a stakeholder accepts the requirements.
+
+## 4. Traceability
+Source / need | Requirement | Use case / screen | Planned check 
+
+S01 residents report an issue | FR01 | Submit Report / report form | Required fields are shown and saved 
+S03 residents check status | FR03 | View Status / status screen | Test reference shows the right status 
+S05 officers record outcome | FR04 | Record Outcome | Outcome is saved on the report 
+
+**Screens (described)**
+Report form: fields Location, Issue type, Description, button Submit.
+Status screen: field Reference, button Check, result "Status: to confirm".
+
+**Gap:** the status words (for example Received, Under review) are not confirmed. Follow-up: ask the public-service coordinator.
+
+## 5. Change request
+Field | Content 
+
+ID | CR01 |
+Change | Allow residents to attach photos 
+Status | Candidate. Not approved
+Proposer | Week 10 lab exercise 
+Policy owner | Public-service coordinator 
+
+**Affected artefacts:** FR01 (new input), the report form screen, privacy requirements.
+
+**Privacy concern:** photos may show people or private places.
+
+**Questions**
+1. Are photos required or optional
+2. Who can view, keep and delete photos
+
+I did not add photos as a confirmed requirement.
+
+## 6. My project (Volunteer and Event Coordination)
+**Corrections**
+Before | After | Source 
+
+Garda vetting used in requirements and diagrams | "Particular skills or experience" | Scenario says some activities need particular skills or experience 
+Create, edit and cancel events in one requirement | Separate requirements: create event (FR03), change or cancel event (FR12) | One behaviour per requirement 
+
+**Traceability**
+Source / need | Requirement | Model / screen | Planned check 
+
+Volunteers are unsure which activities need help | FR06 | View Events / Screen 1 | Open the list; events that need volunteers are shown 
+Volunteers sign up by many methods | FR07 | UC01, AD01 / Screens 3 and 5 | Apply for a role; the screen says it is not a confirmed place 
+
+**Open question:** Can a volunteer apply for several roles in the same event?
+
+## 7. Debrief
+Correction: I replaced a rule that is not in the scenario (Garda vetting) with the wording from the scenario.
+Unresolved question: How are skills or experience checked? (for the lecturer)
+Review type: self-review. Not stakeholder validation.
